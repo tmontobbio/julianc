@@ -15,7 +15,7 @@ export default function Gallery() {
     useEffect(() => {
         const options = {
             method: 'GET',
-            url: 'https://api.pexels.com/v1/collections/6vfo6al?per_page=9&page=1'
+            url: 'http://localhost:3000/api/gallery/'
         }
 
         axios.request(options).then(res => {
@@ -27,7 +27,8 @@ export default function Gallery() {
     const loadMore = () => {
         const options = {
             method: 'GET',
-            url: `https://api.pexels.com/v1/collections/6vfo6al?per_page=3&page=${page}`
+            url: `http://localhost:3000/api/paginate/`,
+            params: { page: page }
         }
         axios.request(options).then(res => setGallery([...gallery, ...res.data.media]))
         setPage(page + 1)
