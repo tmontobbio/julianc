@@ -1,0 +1,370 @@
+/* ########################################## */
+/* ################# General ################ */
+
+.App {
+  margin: auto;
+  width: 90vw;
+  min-width: 640px;
+  text-align: center;
+}
+
+@keyframes fadeIn {
+  0% {
+    opacity: 0;
+  }
+
+  100% {
+    opacity: 1;
+  }
+}
+
+@keyframes scaleUp {
+  0% {
+    transform: scale(1.0);
+  }
+
+  100% {
+    transform: scale(1.1);
+  }
+}
+
+@keyframes btnScaleUp {
+  0% {
+    transform: scale(1.0);
+  }
+
+  100% {
+    transform: scale(1.5);
+  }
+}
+
+a {
+  cursor: pointer;
+}
+
+h1 {
+  padding-bottom: .75ch;
+}
+
+button {
+  margin: 2ch;
+  padding: 0ch 2ch 0ch 2ch;
+  border-radius: 5ch;
+  background-color: rgb(65, 65, 65);
+  width: auto;
+  height: auto;
+}
+
+button p {
+  font-size: 3ch;
+  color: rgb(255, 255, 255, .7);
+}
+
+/* ########################################## */
+/* ################### Main ################# */
+
+#about,
+#store,
+#gallery,
+#home {
+  animation: fadeIn 3.5s;
+  min-height: 100vh;
+  padding: 2ch 1ch 1ch 1ch;
+}
+
+#gallery {
+  background-color: rgba(0, 0, 0, 0.3);
+  border-radius: 2ch;
+  -ms-overflow-style: none;
+  /* Internet Explorer 10+ */
+  scrollbar-width: none;
+  /* Firefox */
+}
+
+#about {
+  padding: 10vh 0vw 10vh 0vw;
+}
+
+#about-wrapper {
+  padding-top: 1.5ch;
+  display: flex;
+  flex-direction: row;
+  width: 60vw;
+  margin: 0 auto;
+}
+
+#about-image-container {
+  width: fit-content;
+}
+
+#about-image {
+  height: 80vh;
+  object-fit: contain;
+}
+
+#about-bio {
+  margin: auto;
+  width: 20vw;
+}
+
+/* ########################################## */
+/* ############### Nav + Banner ############# */
+
+
+#placeholder {
+  width: 100%;
+  min-height: 10vh;
+  max-height: 100px;
+  font-size: 5ch;
+  text-align: center;
+  vertical-align: middle;
+  line-height: 80px;
+  animation: fadeIn 2.25s;
+}
+
+#logo {
+  font-family: 'Cedarville Cursive', cursive;
+  font-size: 6ch;
+}
+
+#btn-container a {
+  margin: auto;
+}
+
+#nav,
+#btn-container,
+#logo {
+  z-index: 999;
+  display: flex;
+  justify-content: space-between;
+  animation: fadeIn 2.75s;
+  background-color: rgba(255, 255, 255, 0);
+}
+
+#nav {
+  max-height: 100px;
+  /* position: fixed; */
+}
+
+#btn-container {
+  line-height: 2ch;
+  font-size: 2ch;
+}
+
+#about p {
+  color: rgba(255, 255, 255, 0.905);
+  font-family: 'Caveat', cursive;
+  font-size: 3.5ch !important;
+}
+
+.sticky {
+  position: sticky;
+  top: 0;
+}
+
+.sticky+.content {
+  padding-top: 60px;
+}
+
+.spacer-nav {
+  width: 2vw;
+}
+
+.spacer-nav-2 {
+  width: 25vw;
+}
+
+.nav-btn {
+  font-size: 3ch;
+}
+
+.nav-btn,
+#logo {
+  color: rgba(255, 255, 255, 0.8);
+}
+
+.nav-btn:hover {
+  transform: scale(1.1);
+}
+
+/* ########################################## */
+/* ################## Gallery ############### */
+
+
+.gallery-wrap {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 2.5ch;
+  align-items: center;
+  justify-content: center;
+  max-width: 100%;
+  margin: 0 auto;
+}
+
+.gallery-wrap .single img {
+  width: 100%;
+}
+
+.single {
+  cursor: pointer;
+  height: 29vh;
+  width: 32%;
+  overflow: hidden;
+  border-radius: 2ch;
+  box-shadow: rgba(0, 0, 0, 0.55) 0px 5px 15px;
+}
+
+.gallery-wrap .single img:hover {
+  animation: scaleUp 1s forwards;
+  z-index: 0;
+}
+
+.slider-wrap {
+  position: fixed;
+  top: 0;
+  bottom: 0;
+  left: 0;
+  right: 0;
+  z-index: 999;
+  display: flex;
+  display: -webkit-flex;
+  display: -moz-flex;
+  display: -ms-flex;
+  display: -o-flex;
+  align-items: center;
+  justify-content: center;
+  width: 100%;
+  height: 100%;
+}
+
+.slider-wrap .btn-close,
+.slider-wrap .btn-prev,
+.slider-wrap .btn-next,
+#counter {
+  position: fixed;
+  cursor: pointer;
+  opacity: 0.6;
+  color: #fff;
+  z-index: 9999;
+  width: 6ch;
+  height: 6ch;
+}
+
+.btn-next:hover,
+.btn-prev:hover,
+.btn-close:hover {
+  opacity: 1;
+}
+
+#counter {
+  width: 14ch;
+  top: 0px;
+  justify-content: center;
+}
+
+#counter p {
+  font-size: 3ch;
+  color: rgba(255, 255, 255, 0.8);
+}
+
+.slider-wrap .btn-close {
+  top: 40px;
+  right: 40px;
+}
+
+.slider-wrap .btn-prev {
+  top: 50%;
+  left: 40px;
+  transform: translateY(-50%)
+}
+
+.slider-wrap .btn-next {
+  top: 50%;
+  right: 40px;
+  transform: translateY(-50%)
+}
+
+.fs-img {
+  animation: fadeIn .3s;
+  width: 100%;
+  height: 100%;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  background-color: rgba(0, 0, 0, 0.8);
+}
+
+.fs-img img {
+  max-width: 85%;
+  max-height: 85%;
+  pointer-events: none;
+  -webkit-user-select: none;
+  /* Safari */
+  -ms-user-select: none;
+  /* IE 10 and IE 11 */
+  user-select: none;
+  /* Standard syntax */
+}
+
+/* ########################################## */
+/* ################## Footer ################ */
+
+#footer {
+  margin: auto;
+  display: flex;
+  justify-content: space-around;
+  width: 100%;
+  max-height: 100px;
+  height: 10vh
+}
+
+#footer div {
+  display: inline-flex;
+  height: 100%;
+  width: auto;
+  line-height: 80px;
+}
+
+#footer div p,
+.icon {
+  color: rgba(255, 255, 255, 0.7);
+  font-size: 2.5ch;
+}
+
+#footer .icon {
+  height: 4vh;
+}
+
+#footer .icon:hover {
+  animation: btnScaleUp .5s forwards;
+}
+
+#icon-container {
+  padding-top: 2.5vh;
+  height: fit-content !important;
+}
+
+.icon-spacer {
+  width: 1vw !important;
+  height: 100%;
+}
+
+/* ########################################## */
+/* ################ Mobile ################## */
+
+@media (max-width: 1000px) {
+  .App {
+    width: 100vw;
+  }
+
+  #nav {
+    font-size: 2.5ch !important;
+    line-height: 2.5ch !important;
+  }
+
+  .fs-img {
+    width: calc(100% - 40px);
+    height: calc(100% - 40px);
+  }
+}
