@@ -5,6 +5,7 @@ const { default: axios } = require('axios')
 require('dotenv').config()
 
 const app = express()
+app.use(cors())
 
 app.get('/api/gallery', (req, res) => {
     const options = {
