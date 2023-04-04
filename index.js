@@ -3,25 +3,27 @@ const express = require('express')
 const cors = require('cors')
 const { default: axios } = require('axios')
 require('dotenv').config()
-
 const app = express()
-app.use(cors())
 
-app.get('/api/gallery', cors(), (req, res) => {
+app.use(cors({
+    origin: "https://cristman.onrender.com",
+    headers: ["Content-Type"],
+    credentials: true,
+}));
+
+app.get('/api/gallery', (req, res) => {
     const options = {
         headers: {
-            "Access-Control-Allow-Origin": "*",
             'Content-Type': 'application/json',
             'Authorization': process.env.API_KEY
         }
     }
-
     axios.request(options).then((r) => {
         res.json(r.data)
     })
 })
 
-app.get('/api/paginate', cors(), (req, res) => {
+app.get('/api/paginate', (req, res) => {
     const options = {
         method: 'GET',
         url: `https://api.pexels.com/v1/collections/6vfo6al?per_page=3&page=1`,
@@ -30,7 +32,6 @@ app.get('/api/paginate', cors(), (req, res) => {
             'Authorization': process.env.API_KEY
         }
     }
-
     axios.request(options).then((r) => {
         res.json(r.data)
     })
