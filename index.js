@@ -10,6 +10,7 @@ app.use(cors())
 app.get('/api/gallery', (req, res) => {
     const options = {
         headers: {
+            "Access-Control-Allow-Origin": "*",
             'Content-Type': 'application/json',
             'Authorization': process.env.API_KEY
         }
