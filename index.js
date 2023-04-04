@@ -7,7 +7,7 @@ require('dotenv').config()
 const app = express()
 app.use(cors())
 
-app.get('/api/gallery', (req, res) => {
+app.get('/api/gallery', cors(), (req, res) => {
     const options = {
         headers: {
             "Access-Control-Allow-Origin": "*",
@@ -21,7 +21,7 @@ app.get('/api/gallery', (req, res) => {
     })
 })
 
-app.get('/api/paginate', (req, res) => {
+app.get('/api/paginate', cors(), (req, res) => {
     const options = {
         method: 'GET',
         url: `https://api.pexels.com/v1/collections/6vfo6al?per_page=3&page=1`,
