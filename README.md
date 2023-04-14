@@ -14,6 +14,6 @@ npm i express cors dotenv axios nodemon
 ## To Start
 
 ```
-npm start
+npm run start
 npm run start:backend
 ```

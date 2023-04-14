@@ -24,7 +24,21 @@ export default function Gallery() {
         })
     }, []);
 
-    const loadMore = () => {
+
+    // window.onscroll = function () {
+    //     if ((window.innerHeight + window.scrollY) >= document.body.offsetHeight) {
+    //         console.log("bottom")
+    //         const options = {
+    //             method: 'GET',
+    //             url: `http://localhost:3000/api/paginate/`,
+    //             params: { page: page }
+    //         }
+    //         axios.request(options).then(res => setGallery([...gallery, ...res.data.media]))
+    //         setPage(page + 1)
+    //     }
+    // };
+
+    const fetchItems = () => {
         const options = {
             method: 'GET',
             url: `http://localhost:3000/api/paginate/`,
@@ -81,8 +95,8 @@ export default function Gallery() {
                     </div>
                 })}
             </div>
-            {gallery.length !== galLength && <button onClick={loadMore}><p>More Results...</p></button>}
-            {gallery.length === galLength && < Footer />}
+            {gallery.length !== galLength && <button onClick={fetchItems}><p>More Results...</p></button>}
+            < Footer />
         </div>
     )
 }

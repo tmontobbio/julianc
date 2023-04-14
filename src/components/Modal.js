@@ -1,9 +1,6 @@
-import { FontAwesomeIcon } from '@fortawesome/react-fontawesome'
-import {
-    faCircleChevronLeft,
-    faCircleChevronRight,
-    faCircleXmark
-} from '@fortawesome/free-solid-svg-icons'
+import left from "../img/left.png"
+import right from "../img/right.png"
+import close from "../img/close.png"
 
 export default function Modal({ handleCloseModal, prevSlide, nextSlide, gallery, slideNumber }) {
 
@@ -14,21 +11,9 @@ export default function Modal({ handleCloseModal, prevSlide, nextSlide, gallery,
                     {slideNumber + 1} / {gallery.length}
                 </p>
             </div>
-            <FontAwesomeIcon
-                icon={faCircleXmark}
-                className="btn-close"
-                onClick={handleCloseModal}
-            />
-            <FontAwesomeIcon
-                icon={faCircleChevronLeft}
-                className="btn-prev"
-                onClick={prevSlide}
-            />
-            <FontAwesomeIcon
-                icon={faCircleChevronRight}
-                className="btn-next"
-                onClick={nextSlide}
-            />
+            <img src={close} alt="close" className="btn-close" onClick={handleCloseModal} />
+            <img src={left} alt="left" className="btn-prev" onClick={prevSlide} />
+            <img src={right} alt="right" className="btn-next" onClick={nextSlide} />
             <div className='fs-img' onClick={handleCloseModal}>
                 <img src={gallery[slideNumber].src.original} alt={"thumbnail" + gallery[slideNumber]} />
             </div>

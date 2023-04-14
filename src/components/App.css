@@ -34,12 +34,17 @@
   }
 
   100% {
-    transform: scale(1.5);
+    transform: scale(1.3);
   }
 }
 
 a {
   cursor: pointer;
+  text-decoration: none;
+}
+
+a:hover {
+  text-decoration: none;
 }
 
 h1 {
@@ -89,12 +94,13 @@ button p {
   padding-top: 1.5ch;
   display: flex;
   flex-direction: row;
-  width: 60vw;
+  width: 80vw;
   margin: 0 auto;
 }
 
 #about-image-container {
   width: fit-content;
+  margin-right: 100px;
 }
 
 #about-image {
@@ -102,9 +108,10 @@ button p {
   object-fit: contain;
 }
 
-#about-bio {
+#about-bio,
+#about-bio p {
   margin: auto;
-  width: 20vw;
+  width: 30vw;
 }
 
 /* ########################################## */
@@ -212,6 +219,7 @@ button p {
   overflow: hidden;
   border-radius: 2ch;
   box-shadow: rgba(0, 0, 0, 0.55) 0px 5px 15px;
+  animation: fadeIn 2.75s;
 }
 
 .gallery-wrap .single img:hover {
@@ -337,12 +345,17 @@ button p {
 }
 
 #footer .icon:hover {
+  /* animation: btnScaleUp .5s forwards; */
   animation: btnScaleUp .5s forwards;
 }
 
 #icon-container {
   padding-top: 2.5vh;
   height: fit-content !important;
+}
+
+#tmontobbio:hover {
+  animation: scaleUp .5s forwards;
 }
 
 .icon-spacer {
@@ -355,7 +368,8 @@ button p {
 
 @media (max-width: 1000px) {
   .App {
-    width: 100vw;
+    width: 100vw !important;
+    margin: 0 !important;
   }
 
   #nav {
@@ -366,5 +380,26 @@ button p {
   .fs-img {
     width: calc(100% - 40px);
     height: calc(100% - 40px);
+  }
+
+  #about {
+    displaY: flex;
+  }
+
+  #about-image {
+    height: auto;
+    width: 100vw;
+    object-fit: contain;
+  }
+
+  #about-wrapper {
+    flex-direction: column;
+    width: 100vw;
+  }
+
+  #about-bio,
+  #about-bio p {
+    margin-top: 25px;
+    width: 100vw;
   }
 }
